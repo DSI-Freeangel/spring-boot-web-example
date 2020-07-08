@@ -1,0 +1,1 @@
+INSERT INTO ITEM(ID, NAME, DESCRIPTION, COUNT) VALUES (1, 'Name', 'Description', 2);
