@@ -13,10 +13,11 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.validation.annotation.Validated;
 
 import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 @Getter
-@Builder
+@Builder(toBuilder = true)
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonIgnoreProperties(ignoreUnknown = true)
 @RequiredArgsConstructor(access = AccessLevel.PRIVATE)
@@ -29,6 +30,7 @@ public class ItemModel {
     private final Integer id;
 
     @ApiModelProperty("Name of item")
+    @NotNull
     @Size(max = 30)
     private final String name;
 

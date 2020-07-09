@@ -10,8 +10,7 @@ import java.util.Optional;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.ArgumentMatchers.eq;
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.when;
+import static org.mockito.Mockito.*;
 
 public class ItemServiceImplTestSimple {
 
@@ -32,5 +31,6 @@ public class ItemServiceImplTestSimple {
         assertEquals(2, itemModel.getCount());
         assertEquals("Test product", itemModel.getName());
         assertEquals("description", itemModel.getDescription());
+        verify(itemRepository, times(1)).findById(any());
     }
 }
